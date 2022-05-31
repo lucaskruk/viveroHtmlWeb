@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100&family=Ubuntu:wght@300&display=swap');
+
+
+:root{
+    --white: rgb(238, 247, 223);
+    --black: #36383F;
+    --grey: #85888C;
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+body{
+    background-color: var(--white);
+}
+
+
+/* Elementos de la grilla */
+
+header {
+    grid-area: header;
+    background-color: azure;
+    position: fixed;
+    box-shadow: 1px 1px 5px 0px var(--grey);
+    top: 0;
+    width: 100%;
+    padding: 0.1rem;
+}
+.headerMargin {
+    margin-top: 17rem;
+}
+.bannerImage {
+    grid-area: banner;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: publicidad;
+}
+
+footer {
+    grid-area: footer;
+    background-color: azure;
+    margin-top: 3rem;
+}
+
+.bodyGrid {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "banner"
+    "main"
+    "publicidad"
+    "footer";
+    grid-template-columns: 100%;
+    gap: 1rem;
+}
+
+/* tamaños de fuente generales*/
+h1 {
+    font-size: 3.2rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2.2rem;
+}
+p {
+    font-size: 1.8rem;
+}
+a{
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+figcaption {
+    font-size: 1.8rem;
+}
+.pageTitle {
+    margin-bottom: 2rem;
+}
+.pageSubtitle {
+    padding: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+/* HEADER */
+
+/* Navegacion */
+.navContainer {
+    display: flex;
+}
+.mainNav{
+    margin-top: 8rem;
+    width: 90%;
+    height: 80%;
+    position: fixed;
+    overflow: hidden;
+    background-color: azure;
+}
+
+.navMenu li{
+    list-style-type: none;
+    display: block;
+    margin: 0.5rem;
+}
+
+.navMenu li a {
+    display: block;
+    font-family: 'Overpass', sans-serif;
+    color: black;
+    font-size: 2.6rem;
+}
+
+.mainNav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+.header__title{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: left;
+}
+
+.logoImg {
+    flex-basis: 2rem;
+}
+
+.logoTitle {
+    font-size: 3rem;
+    padding: 1rem 2rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*menu celular*/
+.hamb{
+    display: flex;
+    cursor: pointer;
+    float: right;
+    padding: 1rem 2rem;
+    align-items: center;
+}
+
+
+.hambLine {
+    background: var(--black);
+    display: block;
+    height: 0.2rem;
+    position: relative;
+    width: 2.4rem;
+    
+}
+
+.hambLine::before,
+.hambLine::after{
+    background: var(--black);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hambLine::before{
+    top: 0.5rem;
+}
+
+.hambLine::after{
+    top: -0.5rem;
+}
+
+.sideMenu {
+    display: none;
+}
+
+/* Activar menu mobile */
+
+.sideMenu:checked ~ .mainNav{
+    max-height: 100%;
+    display: block;
+}
+
+
+.sideMenu:checked ~ .hamb .hambLine {
+    background: black;
+}
+
+.sideMenu:checked ~ .hamb .hambLine::before {
+    transform: rotate(-45deg);
+    top:0;
+
+}
+
+.sideMenu:checked ~ .hamb .hambLine::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+/* INDEX */
+
+.fotosIndex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem;
+}
+
+.basicPicture {
+    width: 100%;
+    height: auto; 
+    padding: 1rem;
+}
+
+
+#indexMainPicture {
+    width: 100%;
+    height: auto;
+}
+
+/* PRODUCTOS */
+
+.listaProductos {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CUIDADOS */
+
+.cuidadoDePlantasTips {
+    margin: 0.5rem;
+}
+
+.cuidadosIframe {
+    height: 476px;
+}
+
+.cuidadoDePlantasTips p {
+    font-size: 2rem;
+    padding-top: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+/* HISTORIA */
+.historiaFoto {
+    width: 50%;
+    height: auto;
+}
+.textoHistoria p {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+/* CONTACTO */
+.contactForm input, .contactForm textarea, .contactForm select, .contactForm button {
+    width : 80%;
+    padding: 0;
+    margin: 0.5rem;
+    box-sizing: border-box;
+  }
+.contactForm {
+    box-sizing: border-box;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: hsl(0, 0%, 100%);
+    border: 4px solid hsl(0, 0%, 90%);
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+.contactForm label {
+    font-size: 1.5rem;
+  }
+
+  #locationMap {
+    width: 95%;
+    height: 60rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+/* FOOTER */
+.footerFlexItems {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.footerNav {
+    margin-left: 1rem;
+}
+.footerNav li {
+    list-style-type: none;
+}
+.footerNav li a {
+    font-family: 'Overpass', sans-serif;
+    color: black;
+}
+.footerContactDetails {
+    margin-left: 2rem;
+    margin-right: 3rem;
+}
+
+.socialLinkImage {
+    width: 3rem;
+    height: 3rem;
+}
+
+.footerEmailInput {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.footerContactBox {
+    height: 2rem;
+}
+
+
+
+/* Responsiveness */
+@media (min-width: 768px) {
+    .bodyGrid {
+        grid-template-areas: 
+        "header header"
+        "banner banner"
+        "main   publicidad"
+        "footer footer";
+        grid-template-columns: 70% 30%;
+    }
+
+    .fotosIndex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        margin: 0.5rem;
+    }
+    
+    .listaProductos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        margin: 0.5rem;
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+    .header__title{
+        justify-content: right;
+    }
+     
+    .mainNav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: left;
+        width: fit-content;
+        margin-top: 1rem;
+
+    }
+    .navContainer {
+        display: block;
+    }
+
+    .navMenu li{
+        float: left;
+    }
+
+    .navMenu a:hover{
+        background-color: transparent;
+        color: var(--grey);
+        
+    }
+    
+    .hamb{
+        display: none;
+    }
+
+}
