@@ -134,6 +134,7 @@ figcaption {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: left;
+    z-index: 9999;
 }
 
 .logoImg {
@@ -223,6 +224,7 @@ figcaption {
     width: 100%;
     height: auto; 
     padding: 1rem;
+    z-index: -1;
 }
 
 
@@ -328,7 +330,15 @@ figcaption {
     height: 2rem;
 }
 
-
+[data-aos] {
+    pointer-events: none;
+  }
+  .aos-animate {
+    pointer-events: auto;
+  }
+  .aos-init[data-aos][data-aos].aos-animate {
+    transform: unset;
+  }
 
 /* Responsiveness */
 @media (min-width: 768px) {
