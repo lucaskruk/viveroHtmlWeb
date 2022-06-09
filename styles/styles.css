@@ -227,10 +227,17 @@ figcaption {
     z-index: -1;
 }
 
+.carousel .carousel-inner{
+    height:500px
+}
+.carousel-inner .carousel-item img{
+    min-height:200px;
+    height:500px;
+    object-fit:cover
+}
 
-#indexMainPicture {
+    #carouselBannerImages {
     width: 100%;
-    height: auto;
 }
 
 /* PRODUCTOS */
@@ -267,32 +274,41 @@ figcaption {
 }
 
 /* CONTACTO */
-.contactForm input, .contactForm textarea, .contactForm select, .contactForm button {
-    width : 80%;
-    padding: 0;
-    margin: 0.5rem;
-    box-sizing: border-box;
-  }
 .contactForm {
     box-sizing: border-box;
     padding: 2rem;
     border-radius: 1rem;
     background-color: hsl(0, 0%, 100%);
     border: 4px solid hsl(0, 0%, 90%);
-    display: inline-grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+    width : 60%;
   }
 
+.contactForm input {
+    padding: 0;
+    box-sizing: border-box;
+    height: 2.2rem;
+    font-size: 1.2rem;
+  }
+.contactForm textarea {
+    font-size: 1.2rem;
+}
 .contactForm label {
     font-size: 1.5rem;
   }
+.contactForm .button {
+    padding: 0.4rem;
+    height: 3rem;
+}
 
   #locationMap {
     width: 95%;
     height: 60rem;
     padding: 0.5rem;
     margin: 0.5rem;
+}
+#noticiasCheck {
+    width: 2.2rem;
+    margin-right: 0.5rem;
 }
 
 /* FOOTER */
@@ -319,6 +335,8 @@ figcaption {
 .socialLinkImage {
     width: 3rem;
     height: 3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .footerEmailInput {
@@ -327,7 +345,8 @@ figcaption {
 }
 
 .footerContactBox {
-    height: 2rem;
+    height: 2.3rem;
+    display: inline-flex;
 }
 
 [data-aos] {
