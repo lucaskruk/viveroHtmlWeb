@@ -8,71 +8,100 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <title>La Casa de Las Plantas - Productos</title>
 </head>
-<body>
-        <header>
-            <section class="header__title">
+    <body>
+        <header class="header__title">
+            <a href="../index.html" class="logoLink">
                 <img class="logoImg" src="../img/potlogo.png" alt="Logo Maceta" width="120" height="120">
                 <h1 class="logoTitle">
                     La Casa de las Plantas
                 </h1>
-                <div class="navContainer">
-                    <!-- Hamburger icon -->
-                    <input class="sideMenu" type="checkbox" id="sideMenu"/>
-                    <label class="hamb" for="sideMenu"><span class="hambLine"></span></label> 
-                    <nav class="mainNav">
-                        <ul class="navMenu">
-                            <li>
-                                <a href="../index.html">Inicio</a>
-                            </li>
-                            <li>
-                                <a href="./cuidados.html">Cuidados</a>
-                            </li>
-                            <li>
-                                <a href="./productos.html">Productos</a>
-                            </li>
-                            <li>
-                                <a href="./historia.html">Historia</a>
-                            </li>
-                            <li>
-                                <a href="./contacto.html">Contacto</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>     
-            </section>
+            </a>
+            <div class="navContainer">
+                <!-- Hamburger icon -->
+                <input class="sideMenu" type="checkbox" id="sideMenu"/>
+                <label class="hamb" for="sideMenu"><span class="hambLine"></span></label> 
+
+                <nav class="mainNav">
+                    <ul class="navMenu">
+                        <li>
+                            <a href="../index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="./cuidados.html">Cuidados</a>
+                        </li>
+                        <li>
+                            <a href="./productos.html">Productos</a>
+                        </li>
+                        <li>
+                            <a href="./historia.html">Historia</a>
+                        </li>
+                        <li>
+                            <a href="./contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> 
         </header>
         <main class="headerMargin">
             <h1 class="pageTitle">Catalogo de Productos</h1>
 
-            <section class="listaProductos">
-                <figure>
-                    <img class="basicPicture" src="../img/macetas.jpg" alt="foto de una maceta">
-                    <figcaption>Macetas</figcaption>
-                </figure>
-                <figure>
-                    <img class="basicPicture" src="../img/serviciosJardineria.jpg" alt="foto de una mano con una pala">
-                    <figcaption>Servicios de Jardineria</figcaption>
-                </figure>
-                <figure>
-                    <img class="basicPicture" src="../img/plantasInterior.jpg" alt="foto de plantas de interior">
-                    <figcaption>Plantas de interior</figcaption>
-                </figure>
-                <figure>
-                    <img class="basicPicture" src="../img/plantasExterior.jpg" alt="foto de plantas de exterior">
-                    <figcaption>Plantas de exterior</figcaption>
-                </figure>
-                <figure>
-                    <img class="basicPicture" src="../img/CCINTA.jpg" alt="foto de una cinta">
-                    <figcaption>Cinta</figcaption>
-                </figure>
-                <figure>
-                    <img class="basicPicture" src="../img/HELECHO.jpg" alt="foto de un helecho">
-                    <figcaption>Helecho</figcaption>
-                </figure>
-                <figure>
-                    <img class="basicPicture" src="../img/PALMA.jpg" alt="foto de una palma">
-                    <figcaption>Palma</figcaption>
-                </figure>
+            <section class="listaProductos" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <img src="../img/macetas.jpg" class="card-img-top" alt="foto de una maceta">
+                                <div class="card-body">
+                                <h5 class="card-title">Maceta pintada</h5>
+                                <p class="card-text">Maceta pintada artesanal de 15</p>
+                                <a href="#" class="btn btn-success">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="../img/PALMA.jpg" class="card-img-top"  alt="foto de una palma">
+                                <div class="card-body">
+                                <h5 class="card-title">Palma</h5>
+                                <p class="card-text">Planta de interior, prefiere lugares calidos y humedos.</p>
+                                <a href="#" class="btn btn-success">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <img src="../img/CCINTA.jpg" class="card-img-top"  alt="foto de una cinta">
+                                <div class="card-body">
+                                <h5 class="card-title">Cinta</h5>
+                                <p class="card-text">Planta de interior, se adapta a lugares con poca luz, riego moderado.</p>
+                                <a href="#" class="btn btn-success">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="../img/HELECHO.jpg" class="card-img-top"  alt="foto de un helecho">
+                                <div class="card-body">
+                                <h5 class="card-title">Helecho</h5>
+                                <p class="card-text">Planta de interior, se riega con muy poca frecuencia en invierno.</p>
+                                <a href="#" class="btn btn-success">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card">
+                            <img src="../img/serviciosJardineria.jpg" class="card-img-top" alt="foto de una mano con una pala">
+                            <div class="card-body">
+                            <h5 class="card-title">Servicios de Jardineria</h5>
+                            <p class="card-text">Nos encargamos de que tu jardín o balcon luzca como lo soñabas!</p>
+                            <a href="#" class="btn btn-success">Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
         </main>
@@ -113,5 +142,5 @@
             <p>Todos los derechos reservados</p>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
+    </body>
 </html>

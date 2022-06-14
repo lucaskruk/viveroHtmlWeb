@@ -137,6 +137,17 @@ figcaption {
     z-index: 9999;
 }
 
+.logoLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.logoLink:hover {
+    color: black;
+}
+
 .logoImg {
     flex-basis: 2rem;
 }
@@ -224,7 +235,6 @@ figcaption {
     width: 100%;
     height: auto; 
     padding: 1rem;
-    z-index: -1;
 }
 
 .carousel .carousel-inner{
@@ -371,13 +381,6 @@ figcaption {
     }
 
     .fotosIndex {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.5rem;
-        margin: 0.5rem;
-    }
-    
-    .listaProductos {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;

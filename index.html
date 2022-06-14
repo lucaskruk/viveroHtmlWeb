@@ -13,10 +13,12 @@
 <body>
     <div class="bodyGrid">
         <header class="header__title">
-            <img class="logoImg" src="./img/potlogo.png" alt="Logo Maceta" width="120" height="120">
-            <h1 class="logoTitle">
-                La Casa de las Plantas
-            </h1>
+            <a href="../index.html" class="logoLink">
+                <img class="logoImg" src="./img/potlogo.png" alt="Logo Maceta" width="120" height="120">
+                <h1 class="logoTitle">
+                    La Casa de las Plantas
+                </h1>
+            </a>
             <div class="navContainer">
                 <!-- Hamburger icon -->
                 <input class="sideMenu" type="checkbox" id="sideMenu"/>
@@ -74,22 +76,38 @@
         <main>
             <h2 class="pageSubtitle">Que estas buscando?</h2>
             <section class="fotosIndex">
-                <figure>
-                    <img class="basicPicture" src="./img/macetas.jpg" alt="foto de una maceta">
-                    <figcaption>Macetas</figcaption>
-                </figure>
-                <figure>
-                    <img class="basicPicture" src="./img/serviciosJardineria.jpg" alt="foto de una mano con una pala">
-                    <figcaption>Servicios de Jardineria</figcaption>
-                </figure>
-                <figure>
-                    <img class="basicPicture" src="./img/plantasInterior.jpg" alt="foto de plantas de interior">
-                    <figcaption>Plantas de interior</figcaption>
-                </figure>
-                <figure>
-                    <img class="basicPicture" src="./img/plantasExterior.jpg" alt="foto de plantas de exterior">
-                    <figcaption>Plantas de exterior</figcaption>
-                </figure>
+                <div class="card">
+                    <img src="./img/macetas.jpg" class="card-img-top" alt="foto de una maceta">
+                    <div class="card-body">
+                      <h5 class="card-title">Macetas</h5>
+                      <p class="card-text">Tenemos una amplia variedad de macetas en distintos materiales. Ceramicas, plasticas o de Madera.</p>
+                      <a href="./pages/productos.html" class="btn btn-primary">Ver mas</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./img/serviciosJardineria.jpg" class="card-img-top" alt="foto de una mano con una pala">
+                    <div class="card-body">
+                      <h5 class="card-title">Servicios de Jardineria</h5>
+                      <p class="card-text">Nos encargamos de que tu jardín o balcon luzca como lo soñabas!</p>
+                      <a href="#" class="btn btn-primary">Consultar</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./img/plantasInterior.jpg" class="card-img-top" alt="foto de plantas de interior">
+                    <div class="card-body">
+                      <h5 class="card-title">Plantas de interior</h5>
+                      <p class="card-text">Ideales para lugares con poca luz</p>
+                      <a href="./pages/productos.html" class="btn btn-primary">Ver mas</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./img/plantasExterior.jpg" class="card-img-top" alt="foto de plantas de exterior">
+                    <div class="card-body">
+                      <h5 class="card-title">Plantas de exterior</h5>
+                      <p class="card-text">Tenemos para pleno sol, o media sombra</p>
+                      <a href="./pages/productos.html" class="btn btn-primary">Ver mas</a>
+                    </div>
+                </div>
             </section>
         </main>
         <aside>
