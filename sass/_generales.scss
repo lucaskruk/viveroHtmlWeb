@@ -1,0 +1,252 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+body{
+    background-color: var(--white);
+}
+
+/* tamaños de fuente generales*/
+h1 {
+    font-size: $largeFont; 
+}
+h2 {
+    font-size: $bigTitleFont;
+}
+h3 {
+    font-size: 2.2rem;
+}
+p {
+    font-size: $paragraphFont;
+}
+a{
+    font-size: $paragraphFont;
+    text-decoration: none;
+}
+figcaption {
+    font-size: $paragraphFont;
+}
+.pageTitle {
+    margin-bottom: 2rem;
+}
+.pageSubtitle {
+    padding: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Elementos de la grilla */
+
+header {
+    grid-area: header;
+    background-color: azure;
+    position: fixed;
+    box-shadow: 1px 1px 5px 0px var(--grey);
+    top: 0;
+    width: 100%;
+    padding: 0.1rem;
+}
+.headerMargin {
+    margin-top: 17rem;
+}
+.bannerImage {
+    grid-area: banner;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: publicidad;
+}
+
+footer {
+    grid-area: footer;
+    background-color: azure;
+    margin-top: 3rem;
+}
+
+.bodyGrid {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "banner"
+    "main"
+    "publicidad"
+    "footer";
+    grid-template-columns: 100%;
+    gap: 1rem;
+}
+
+/* HEADER */
+
+/* Navegacion */
+.navContainer {
+    display: flex;
+    .mainNav{
+        margin-top: 8rem;
+        width: 90%;
+        height: 80%;
+        position: fixed;
+        overflow: hidden;
+        background-color: azure;
+        ul {
+            li {
+                list-style-type: none;
+                display: block;
+                margin: 0.8rem;
+                a {
+                    display: block;
+                    font-family: 'Overpass', sans-serif;
+                    color: black;
+                    font-size: $bigTitleFont;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.mainNav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+    margin-right: 4rem;
+}
+
+.header__title{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: left;
+    z-index: 9999;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    &:hover {
+        color: black;
+    }
+}
+
+.logoImg {
+    flex-basis: 2rem;
+    padding: 0.5rem;
+}
+
+.logoTitle {
+    font-size: $largeFont;
+    padding: 1rem 2rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*menu celular*/
+.hamb{
+    display: flex;
+    cursor: pointer;
+    float: right;
+    padding: 1rem 2rem;
+    align-items: center;
+}
+
+
+.hambLine {
+    background: var(--black);
+    display: block;
+    height: 0.2rem;
+    position: relative;
+    width: 2.4rem;
+
+    &:before, &:after {
+        background: var(--black);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+    &:before {
+        top: 0.5rem;
+    }
+    &:after {
+        top: -0.5rem;
+    }
+    
+}
+
+.sideMenu {
+    display: none;
+    &:checked ~ .mainNav{
+        max-height: 100%;
+        display: block;
+    }
+    &:checked ~ .hamb .hambLine {
+        background: black;
+    }
+    &:checked ~ .hamb .hambLine::before {
+        transform: rotate(-45deg);
+        top:0;
+    }
+    &:checked ~ .hamb .hambLine::after {
+        transform: rotate(45deg);
+        top:0;
+    }
+}
+
+/* FOOTER */
+.footerFlexItems {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.footerNav {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    li {
+        list-style-type: none;
+        a {
+            font-family: 'Overpass', sans-serif;
+            color: black;
+        }
+    }
+}
+
+.footerContactDetails {
+    margin-left: 2rem;
+    margin-right: 3rem;
+    margin-top: 0.5rem;
+}
+
+.socialLinkImage {
+    width: 3rem;
+    height: 3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.footerEmailInput {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.footerContactBox {
+    height: 2.3rem;
+    display: inline-flex;
+    margin: 0.5rem;
+}

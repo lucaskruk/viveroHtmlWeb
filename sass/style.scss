@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100&family=Ubuntu:wght@300&display=swap');
+
+@import "_variables";
+@import "_generales";
+@import "_pages";
+@import "_media";
+
+[data-aos] {
+    pointer-events: none;
+  }
+  .aos-animate {
+    pointer-events: auto;
+  }
+  .aos-init[data-aos][data-aos].aos-animate {
+    transform: unset;
+  }
+

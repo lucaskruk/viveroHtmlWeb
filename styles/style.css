@@ -1,0 +1,492 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@100&family=Ubuntu:wght@300&display=swap");
+:root {
+  --white: rgb(238, 247, 223);
+  --black: #36383F;
+  --grey: #85888C;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--white);
+}
+
+/* tamaños de fuente generales*/
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+p {
+  font-size: 1.8rem;
+}
+
+a {
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
+figcaption {
+  font-size: 1.8rem;
+}
+
+.pageTitle {
+  margin-bottom: 2rem;
+}
+
+.pageSubtitle {
+  padding: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Elementos de la grilla */
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  background-color: azure;
+  position: fixed;
+  -webkit-box-shadow: 1px 1px 5px 0px var(--grey);
+          box-shadow: 1px 1px 5px 0px var(--grey);
+  top: 0;
+  width: 100%;
+  padding: 0.1rem;
+}
+
+.headerMargin {
+  margin-top: 17rem;
+}
+
+.bannerImage {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: banner;
+}
+
+main {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: main;
+}
+
+aside {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: publicidad;
+}
+
+footer {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  background-color: azure;
+  margin-top: 3rem;
+}
+
+.bodyGrid {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "header" "banner" "main" "publicidad" "footer";
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  gap: 1rem;
+}
+
+/* HEADER */
+/* Navegacion */
+.navContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navContainer .mainNav {
+  margin-top: 8rem;
+  width: 90%;
+  height: 80%;
+  position: fixed;
+  overflow: hidden;
+  background-color: azure;
+}
+
+.navContainer .mainNav ul li {
+  list-style-type: none;
+  display: block;
+  margin: 0.8rem;
+}
+
+.navContainer .mainNav ul li a {
+  display: block;
+  font-family: 'Overpass', sans-serif;
+  color: black;
+  font-size: 2.5rem;
+}
+
+.mainNav {
+  max-height: 0;
+  -webkit-transition: max-height .5s ease-out;
+  transition: max-height .5s ease-out;
+  margin-right: 4rem;
+}
+
+.header__title {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  z-index: 9999;
+}
+
+.logoLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.logoLink:hover {
+  color: black;
+}
+
+.logoImg {
+  -ms-flex-preferred-size: 2rem;
+      flex-basis: 2rem;
+  padding: 0.5rem;
+}
+
+.logoTitle {
+  font-size: 3.2rem;
+  padding: 1rem 2rem;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/*menu celular*/
+.hamb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  float: right;
+  padding: 1rem 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hambLine {
+  background: var(--black);
+  display: block;
+  height: 0.2rem;
+  position: relative;
+  width: 2.4rem;
+}
+
+.hambLine:before, .hambLine:after {
+  background: var(--black);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.hambLine:before {
+  top: 0.5rem;
+}
+
+.hambLine:after {
+  top: -0.5rem;
+}
+
+.sideMenu {
+  display: none;
+}
+
+.sideMenu:checked ~ .mainNav {
+  max-height: 100%;
+  display: block;
+}
+
+.sideMenu:checked ~ .hamb .hambLine {
+  background: black;
+}
+
+.sideMenu:checked ~ .hamb .hambLine::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 0;
+}
+
+.sideMenu:checked ~ .hamb .hambLine::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 0;
+}
+
+/* FOOTER */
+.footerFlexItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footerNav {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}
+
+.footerNav li {
+  list-style-type: none;
+}
+
+.footerNav li a {
+  font-family: 'Overpass', sans-serif;
+  color: black;
+}
+
+.footerContactDetails {
+  margin-left: 2rem;
+  margin-right: 3rem;
+  margin-top: 0.5rem;
+}
+
+.socialLinkImage {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.footerEmailInput {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.footerContactBox {
+  height: 2.3rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0.5rem;
+}
+
+/* INDEX */
+.fotosIndex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0.5rem;
+}
+
+.fotosIndex .card {
+  margin: 0.5rem;
+}
+
+.basicPicture {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+
+.carousel .carousel-inner {
+  height: 500px;
+}
+
+.carousel .carousel-inner .carousel-item img {
+  min-height: 200px;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#carouselBannerImages {
+  width: 100%;
+}
+
+/* PRODUCTOS */
+.listaProductos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* CUIDADOS */
+.cuidadoDePlantasTips {
+  margin: 0.5rem;
+}
+
+.cuidadoDePlantasTips p {
+  padding-top: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.cuidadosIframe {
+  height: 476px;
+}
+
+/* HISTORIA */
+.historiaFoto {
+  width: 50%;
+  height: auto;
+}
+
+.textoHistoria p {
+  margin-bottom: 1.2rem;
+}
+
+/* CONTACTO */
+.contactForm {
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: white;
+  border: 4px solid #e6e6e6;
+  width: 80%;
+}
+
+.contactForm input {
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 2.6rem;
+  font-size: 1.8rem;
+}
+
+.contactForm textarea {
+  font-size: 1.8rem;
+}
+
+.contactForm label {
+  font-size: 1.8rem;
+}
+
+.contactForm .button {
+  padding: 0.4rem;
+  height: 4rem;
+}
+
+#locationMap {
+  width: 90%;
+  height: 60rem;
+  padding: 0.5rem;
+  margin: 5rem 5% 5rem 5%;
+}
+
+#noticiasCheck {
+  width: 2.2rem;
+  margin-right: 0.5rem;
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+  .bodyGrid {
+        grid-template-areas: "header header" "banner banner" "main   publicidad" "footer footer";
+    -ms-grid-columns: 70% 30%;
+        grid-template-columns: 70% 30%;
+  }
+  .fotosIndex {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__title {
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+  }
+  .navContainer {
+    display: block;
+  }
+  .navContainer .mainNav {
+    max-height: none;
+    top: 0;
+    position: relative;
+    float: left;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 1rem;
+  }
+  .navContainer .mainNav ul li {
+    float: left;
+  }
+  .navContainer .mainNav ul li a:hover {
+    background-color: transparent;
+    color: var(--grey);
+  }
+  .hamb {
+    display: none;
+  }
+}
+
+[data-aos] {
+  pointer-events: none;
+}
+
+.aos-animate {
+  pointer-events: auto;
+}
+
+.aos-init[data-aos][data-aos].aos-animate {
+  -webkit-transform: unset;
+          transform: unset;
+}
+/*# sourceMappingURL=style.css.map */
