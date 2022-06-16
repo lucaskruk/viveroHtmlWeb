@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAA;EACD,OAAO,CAAA,mBAAC;EACR,OAAO,CAAA,QAAC;EACR,MAAM,CAAA,QAAC;CACV;;AAED,AAAA,CAAC,CAAA;EACG,OAAO,EAAC,CAAC;EACT,MAAM,EAAC,CAAC;EACR,UAAU,EAAE,UAAU;CACzB;;AAED,AAAA,IAAI,CAAC;EACD,SAAS,EAAE,KAAK;CACnB;;AACD,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,YAAY;CACjC",
-    "sources": [
-        "../sass/generales.scss"
-    ],
-    "names": [],
-    "file": "generales.css"
-}
