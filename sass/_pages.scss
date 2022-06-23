@@ -9,9 +9,13 @@
     }
 }
 
+@mixin size($ancho, $alto) { 
+    width: $ancho;
+    height: $alto;
+}
+
 .basicPicture {
-    width: 100%;
-    height: auto; 
+    @include size(100%, auto); 
     padding: 1rem;
 }
 
@@ -55,8 +59,9 @@
 
 /* HISTORIA */
 .historiaFoto {
-    width: 50%;
-    height: auto;
+    @include size(60%, auto);
+    margin-left: 20%;
+
 }
 .textoHistoria {
     p {
