@@ -6,6 +6,25 @@
   --grey: #85888C;
 }
 
+/*operaciones*/
+.btn--rojo {
+  background-color: #b64e4e;
+  color: white;
+  font-weight: bold;
+}
+
+.btn--verde {
+  background-color: #65ad5f;
+  color: white;
+  font-weight: bold;
+}
+
+.btn--azul {
+  background-color: #327ee0;
+  color: white;
+  font-weight: bold;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -290,16 +309,19 @@ footer {
   margin-top: 0.5rem;
 }
 
-.socialLinkImage {
-  width: 3rem;
-  height: 3rem;
+/*uso de extend*/
+.smallSideMargin, .socialLinkImage, .footerEmailInput {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
 
+.socialLinkImage {
+  width: 3rem;
+  height: 3rem;
+}
+
 .footerEmailInput {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  border: 3px dashed #327ee0;
 }
 
 .footerContactBox {
@@ -308,6 +330,9 @@ footer {
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /* INDEX */
@@ -372,8 +397,9 @@ footer {
 
 /* HISTORIA */
 .historiaFoto {
-  width: 50%;
+  width: 60%;
   height: auto;
+  margin-left: 20%;
 }
 
 .textoHistoria p {

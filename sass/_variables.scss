@@ -6,3 +6,22 @@
 $largeFont: 3.2rem;
 $paragraphFont: 1.8rem;
 $bigTitleFont: 2.5rem;
+$lightRed: rgb(182, 78, 78);
+$lightGreen: #65ad5f;
+$lightBlue: #327ee0;
+
+/*operaciones*/
+
+$colors: (
+    rojo: $lightRed,
+    verde: $lightGreen,
+    azul: $lightBlue
+);
+
+@each $nombre, $color in $colors {
+    .btn--#{$nombre}{
+        background-color: $color;
+        color: white;
+        font-weight: bold;
+    }
+}

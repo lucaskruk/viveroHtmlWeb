@@ -233,20 +233,26 @@ footer {
     margin-top: 0.5rem;
 }
 
-.socialLinkImage {
-    width: 3rem;
-    height: 3rem;
+
+/*uso de extend*/
+.smallSideMargin {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
+.socialLinkImage {
+    @extend .smallSideMargin;
+    width: 3rem;
+    height: 3rem;
+}
 
 .footerEmailInput {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    @extend .smallSideMargin;
+    border: 3px dashed $lightBlue;
 }
 
 .footerContactBox {
     height: 2.3rem;
     display: inline-flex;
     margin: 0.5rem;
+    align-items: center;
 }
