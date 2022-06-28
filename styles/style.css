@@ -43,10 +43,12 @@ body {
 /* tamaños de fuente generales*/
 h1 {
   font-size: 3.2rem;
+  margin: 1rem 0.2rem;
 }
 
 h2 {
   font-size: 2.5rem;
+  margin: 1rem 0.5rem;
 }
 
 h3 {
@@ -54,6 +56,7 @@ h3 {
 }
 
 p {
+  margin: 1rem 1rem;
   font-size: 1.8rem;
 }
 
@@ -120,6 +123,7 @@ footer {
   grid-area: footer;
   background-color: azure;
   margin-top: 3rem;
+  padding: 1rem;
 }
 
 .bodyGrid {
@@ -381,6 +385,10 @@ footer {
           flex-direction: column;
 }
 
+.productosCard {
+  margin: 2rem 1rem;
+}
+
 /* CUIDADOS */
 .cuidadoDePlantasTips {
   margin: 0.5rem;
@@ -391,15 +399,34 @@ footer {
   margin-bottom: 1.2rem;
 }
 
-.cuidadosIframe {
-  height: 476px;
+.cuidadosPicture {
+  width: 75%;
+  height: auto;
+  margin: 2rem 12.5%;
+}
+
+.fbVideoContainer {
+  margin: 2rem 12.5%;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  width: 75%;
+}
+
+.fbVideoContainer .fbIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* HISTORIA */
 .historiaFoto {
   width: 60%;
   height: auto;
-  margin-left: 20%;
+  margin: 2rem 20%;
 }
 
 .textoHistoria p {
@@ -408,8 +435,7 @@ footer {
 
 /* CONTACTO */
 .contactForm {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2rem auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-align: center;

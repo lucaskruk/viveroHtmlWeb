@@ -13,15 +13,17 @@ body{
 
 /* tamaños de fuente generales*/
 h1 {
-    font-size: $largeFont; 
+    font-size: $largeFont;
+    margin: 1rem 0.2rem; 
 }
 h2 {
     font-size: $bigTitleFont;
+    margin: 1rem 0.5rem;
 }
 h3 {
     font-size: 2.2rem;
 }
-p {
+p { margin: 1rem 1rem;
     font-size: $paragraphFont;
 }
 a{
@@ -73,6 +75,7 @@ footer {
     grid-area: footer;
     background-color: azure;
     margin-top: 3rem;
+    padding: 1rem;
 }
 
 .bodyGrid {
