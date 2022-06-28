@@ -42,7 +42,9 @@
     display: flex;
     flex-direction: column;
 }
-
+.productosCard {
+    margin: 2rem 1rem;
+}
 /* CUIDADOS */
 
 .cuidadoDePlantasTips {
@@ -53,14 +55,32 @@
     }
 }
 
-.cuidadosIframe {
-    height: 476px;
+.cuidadosPicture {
+    @include size(75%, auto);
+    margin: 2rem 12.5%;
+}
+
+.fbVideoContainer {
+    margin: 2rem 12.5%;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    width: 75%;
+}
+
+.fbVideoContainer .fbIframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* HISTORIA */
 .historiaFoto {
     @include size(60%, auto);
-    margin-left: 20%;
+    margin: 2rem 20%;
 
 }
 .textoHistoria {
@@ -71,8 +91,7 @@
 
 /* CONTACTO */
 .contactForm {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 2rem auto;
     box-sizing: border-box;
     align-items: center;
     padding: 2rem;
