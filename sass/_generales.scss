@@ -51,10 +51,10 @@ header {
     grid-area: header;
     background-color: azure;
     position: fixed;
-    box-shadow: 1px 1px 5px 0px var(--grey);
+    box-shadow: 0px 0px 5px 0px var(--grey);
     top: 0;
+    left: 0;
     width: 100%;
-    padding: 0.1rem;
 }
 .headerMargin {
     margin-top: 17rem;
@@ -65,10 +65,13 @@ header {
 
 main {
     grid-area: main;
+    padding: 1rem;
 }
 
 aside {
     grid-area: publicidad;
+    width: 100%;
+    padding: 1rem;
 }
 
 footer {
@@ -87,7 +90,7 @@ footer {
     "publicidad"
     "footer";
     grid-template-columns: 100%;
-    gap: 1rem;
+    gap: 0rem;
 }
 
 /* HEADER */
@@ -128,7 +131,7 @@ footer {
 }
 
 .header__title{
-    padding: 2rem;
+    padding: 1rem 0rem;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
