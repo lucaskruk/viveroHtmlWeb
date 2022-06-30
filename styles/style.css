@@ -88,11 +88,11 @@ header {
   grid-area: header;
   background-color: azure;
   position: fixed;
-  -webkit-box-shadow: 1px 1px 5px 0px var(--grey);
-          box-shadow: 1px 1px 5px 0px var(--grey);
+  -webkit-box-shadow: 0px 0px 5px 0px var(--grey);
+          box-shadow: 0px 0px 5px 0px var(--grey);
   top: 0;
+  left: 0;
   width: 100%;
-  padding: 0.1rem;
 }
 
 .headerMargin {
@@ -109,12 +109,15 @@ main {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: main;
+  padding: 1rem;
 }
 
 aside {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: publicidad;
+  width: 100%;
+  padding: 1rem;
 }
 
 footer {
@@ -132,7 +135,7 @@ footer {
       grid-template-areas: "header" "banner" "main" "publicidad" "footer";
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
-  gap: 1rem;
+  gap: 0rem;
 }
 
 /* HEADER */
@@ -173,7 +176,7 @@ footer {
 }
 
 .header__title {
-  padding: 2rem;
+  padding: 1rem 0rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
