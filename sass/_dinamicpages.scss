@@ -1,0 +1,159 @@
+
+/* CARRITO*/
+.table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem;
+}
+
+.table td,
+.table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: $lightGreen;
+    color: white;
+    font-size: 14pt;
+}
+
+.busquedaStock{
+    margin: 2rem;
+    display: flex;
+}
+
+.busquedaStock input[type=text] {
+padding: 10px;
+font-size: 17px;
+border: 1px solid grey;
+width: 80%;
+background: #f1f1f1;
+}
+
+.busquedaStock button {
+width: 20%;
+padding: 10px;
+background: #2196F3;
+color: white;
+font-size: 17px;
+border: 1px solid grey;
+border-left: none; /* Prevent double borders */
+cursor: pointer;
+}
+
+.busquedaStock button:hover {
+background: #0b7dda;
+}
+
+#totalesCarrito {
+display: flex;
+flex-direction: row;
+margin: 1rem;
+}
+
+
+/* PRODUCTOS */
+
+.listaProductos {
+    display: flex;
+    flex-direction: column;
+}
+
+.productosCard {
+    margin: 2rem 1rem;
+}
+
+.busquedaProd {
+    margin: 0.5rem;
+    display: flex;
+}
+.busquedaProd input[type=text] {
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid grey;
+    width: 60%;
+    background: #f1f1f1;
+}
+    
+.busquedaProd button {
+    width: 40%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 12px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+}
+
+.busquedaProd button:hover {
+    background: #0b7dda;
+}
+
+#productosMain {
+    margin-top: 1rem;
+}
+
+.pageNumber {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    margin: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+#categoriasProd {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.5rem;
+    list-style-type: none;
+}
+#categoriasProd li:hover {
+    text-decoration: underline;
+}
+/* Admin page */
+
+#adminForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    margin: auto;
+    padding: 1%;
+    gap: 1rem;
+}
+
+#adminForm input, #adminForm label, #adminForm button {
+    margin: 0.5rem;
+}
+
+#adminForm input, #adminForm label {
+    font-size: 12pt;
+}
+
+#tablaAdmin {
+    margin: auto;
+}
+
+.pageChangeButtons {
+    display: flex;
+    margin: 1rem;
+}
+.pageChangeButtons button{
+    margin-right: 0.5rem;
+}

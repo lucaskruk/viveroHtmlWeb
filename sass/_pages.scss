@@ -1,54 +1,38 @@
 /* INDEX */
 
-.fotosIndex {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0.5rem;
-    .card {
-        margin: 0.5rem;
-    }
-}
-
-@mixin size($ancho, $alto) { 
+@mixin size($ancho, $alto) {
     width: $ancho;
     height: $alto;
 }
 
 .basicPicture {
-    @include size(100%, auto); 
+    @include size(100%, auto);
     padding: 1rem;
 }
 
 .carousel {
-    .carousel-inner{
-        height:500px;
+    .carousel-inner {
+        height: 500px;
+
         .carousel-item {
-            img{
-            min-height:200px;
-            height:500px;
-            object-fit:cover
+            img {
+                min-height: 200px;
+                height: 500px;
+                object-fit: cover
             }
         }
     }
 
 }
+
 #carouselBannerImages {
     width: 100%;
-}
-
-/* PRODUCTOS */
-
-.listaProductos {
-    display: flex;
-    flex-direction: column;
-}
-.productosCard {
-    margin: 2rem 1rem;
 }
 /* CUIDADOS */
 
 .cuidadoDePlantasTips {
     margin: 0.5rem;
+
     p {
         padding-top: 1rem;
         margin-bottom: 1.2rem;
@@ -77,18 +61,6 @@
     height: 100%;
 }
 
-/* HISTORIA */
-.historiaFoto {
-    @include size(60%, auto);
-    margin: 2rem 20%;
-
-}
-.textoHistoria {
-    p {
-        margin-bottom: 1.2rem;
-    }
-}
-
 /* CONTACTO */
 .contactForm {
     margin: 2rem auto;
@@ -98,31 +70,36 @@
     border-radius: 1rem;
     background-color: hsl(0, 0%, 100%);
     border: 4px solid hsl(0, 0%, 90%);
-    width : 80%;
+    width: 80%;
+
     input {
         padding: 0;
         box-sizing: border-box;
         height: 2.6rem;
         font-size: 1.8rem;
-      }
+    }
+
     textarea {
         font-size: 1.8rem;
     }
+
     label {
         font-size: 1.8rem;
-      }
+    }
+
     .button {
         padding: 0.4rem;
         height: 4rem;
     }
-  }
+}
 
-  #locationMap {
+#locationMap {
     width: 90%;
     height: 60rem;
     padding: 0.5rem;
     margin: 5rem 5% 5rem 5%;
 }
+
 #noticiasCheck {
     width: 2.2rem;
     margin-right: 0.5rem;

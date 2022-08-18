@@ -4,12 +4,25 @@
         grid-template-areas: 
         "header header"
         "banner banner"
-        "main   publicidad"
+        "main   aside"
         "footer footer";
         grid-template-columns: 3fr 1fr;
     }
 
-    .fotosIndex {
+    .productosGrid {
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "aside  main"
+        "footer footer";
+        grid-template-columns: 2fr 5fr;
+        gap: 0.2rem;
+    }
+    #productosMain {
+        margin-top: 17rem;
+    }
+
+    .cardsList {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;

@@ -81,6 +81,10 @@ figcaption {
   display: none;
 }
 
+.btn {
+  padding: 0.5rem;
+}
+
 /* Elementos de la grilla */
 header {
   -ms-grid-row: 1;
@@ -113,15 +117,15 @@ main {
 }
 
 aside {
-  -ms-grid-row: 4;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
-  grid-area: publicidad;
+  grid-area: aside;
   width: 100%;
   padding: 1rem;
 }
 
 footer {
-  -ms-grid-row: 5;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: footer;
   background-color: azure;
@@ -132,10 +136,32 @@ footer {
 .bodyGrid {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "header" "banner" "main" "publicidad" "footer";
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
-  gap: 0rem;
+      grid-template-areas: "header" "banner" "main" "aside" "footer";
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 0.2rem;
+}
+
+.productosGrid {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "header" "aside" "main" "footer";
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 0.2rem;
+}
+
+.cardsList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0.5rem;
+}
+
+.cardsList .card {
+  margin: 0.5rem;
 }
 
 /* HEADER */
@@ -218,6 +244,19 @@ footer {
   font-size: 3.2rem;
   padding: 1rem 2rem;
   font-family: 'Ubuntu', sans-serif;
+}
+
+.logoCarrito {
+  height: 25px;
+  width: 30px;
+}
+
+#carritoCant {
+  font-family: 'Ubuntu', sans-serif;
+  color: red;
+  font-size: medium;
+  margin: 0.5rem;
+  font-weight: bold;
 }
 
 /*menu celular*/
@@ -343,19 +382,6 @@ footer {
 }
 
 /* INDEX */
-.fotosIndex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 0.5rem;
-}
-
-.fotosIndex .card {
-  margin: 0.5rem;
-}
-
 .basicPicture {
   width: 100%;
   height: auto;
@@ -375,21 +401,6 @@ footer {
 
 #carouselBannerImages {
   width: 100%;
-}
-
-/* PRODUCTOS */
-.listaProductos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.productosCard {
-  margin: 2rem 1rem;
 }
 
 /* CUIDADOS */
@@ -423,17 +434,6 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-/* HISTORIA */
-.historiaFoto {
-  width: 60%;
-  height: auto;
-  margin: 2rem 20%;
-}
-
-.textoHistoria p {
-  margin-bottom: 1.2rem;
 }
 
 /* CONTACTO */
@@ -484,14 +484,205 @@ footer {
   margin-right: 0.5rem;
 }
 
+/* CARRITO*/
+.table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem;
+}
+
+.table td,
+.table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #ddd;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #65ad5f;
+  color: white;
+  font-size: 14pt;
+}
+
+.busquedaStock {
+  margin: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.busquedaStock input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+.busquedaStock button {
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  /* Prevent double borders */
+  cursor: pointer;
+}
+
+.busquedaStock button:hover {
+  background: #0b7dda;
+}
+
+#totalesCarrito {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 1rem;
+}
+
+/* PRODUCTOS */
+.listaProductos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.productosCard {
+  margin: 2rem 1rem;
+}
+
+.busquedaProd {
+  margin: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.busquedaProd input[type=text] {
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid grey;
+  width: 60%;
+  background: #f1f1f1;
+}
+
+.busquedaProd button {
+  width: 40%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 12px;
+  border: 1px solid grey;
+  border-left: none;
+  /* Prevent double borders */
+  cursor: pointer;
+}
+
+.busquedaProd button:hover {
+  background: #0b7dda;
+}
+
+#productosMain {
+  margin-top: 1rem;
+}
+
+.pageNumber {
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  margin: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+#categoriasProd {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  text-align: center;
+  margin: 0.5rem;
+  list-style-type: none;
+}
+
+#categoriasProd li:hover {
+  text-decoration: underline;
+}
+
+/* Admin page */
+#adminForm {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 60%;
+  margin: auto;
+  padding: 1%;
+  gap: 1rem;
+}
+
+#adminForm input, #adminForm label, #adminForm button {
+  margin: 0.5rem;
+}
+
+#adminForm input, #adminForm label {
+  font-size: 12pt;
+}
+
+#tablaAdmin {
+  margin: auto;
+}
+
+.pageChangeButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem;
+}
+
+.pageChangeButtons button {
+  margin-right: 0.5rem;
+}
+
 /* Responsiveness */
 @media (min-width: 768px) {
   .bodyGrid {
-        grid-template-areas: "header header" "banner banner" "main   publicidad" "footer footer";
-    -ms-grid-columns: 70% 30%;
-        grid-template-columns: 70% 30%;
+        grid-template-areas: "header header" "banner banner" "main   aside" "footer footer";
+    -ms-grid-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr;
   }
-  .fotosIndex {
+  .productosGrid {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "header header" "aside  main" "footer footer";
+    -ms-grid-columns: 2fr 5fr;
+        grid-template-columns: 2fr 5fr;
+    gap: 0.2rem;
+  }
+  #productosMain {
+    margin-top: 17rem;
+  }
+  .cardsList {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script defer src="../js/vars.js"></script>
+    <script defer src="../js/functions.js"></script>
+    <script defer src="../js/app.js"></script>
+    <title>Vivero Iguazu - Carrito de Compras</title>
+</head>
+
+<body>
+    <header class="header__title">
+        <a href="../index.html" class="logoLink">
+            <img class="logoImg" src="../img/potlogo.png" alt="Logo Maceta" width="120" height="120">
+            <div class="logoTitle">
+                Vivero Iguazu
+            </div>
+        </a>
+        <div class="navContainer">
+            <!-- Hamburger icon -->
+            <input class="sideMenu" type="checkbox" id="sideMenu" />
+            <label class="hamb" for="sideMenu"><span class="hambLine"></span></label>
+    
+            <nav class="mainNav">
+                <ul class="navMenu">
+                    <li>
+                        <a href="../index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="./cuidados.html">Cuidados</a>
+                    </li>
+                    <li>
+                        <a href="./productos.html">Productos</a>
+                    </li>
+                    <li>
+                        <a href="./contacto.html">Contacto</a>
+                    </li>
+                    <li>
+                        <a id="carritoNav" href="./micarrito.html"><img class="logoCarrito" src="../img/cart.png" alt="imagen de carrito de compras"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>  
+    <main class="headerMargin">\
+        <h1 class="pageTitle">Carrito de Compras</h1>
+        <table  class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Quitar del Carrito</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCarritoBody">
+            </tbody>
+        </table>
+        
+        <div id="totalesCarrito"></div>
+        <button class="btn btn--verde" id="enviarPedidoBtn">Enviar Pedido</button>
+
+    </main>
+    <footer>
+        <section class="footerFlexItems">
+            <nav class="footerNav">
+                <ul>
+                    <li>
+                        <a href="../index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="./cuidados.html">Cuidados</a>
+                    </li>
+                    <li>
+                        <a href="./productos.html">Productos</a>
+                    </li>
+                    <li>
+                        <a href="./contacto.html">Contacto</a>
+                    </li>
+                    <li>
+                        <a href="./micarrito.html">Carrito de Compras</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footerContactDetails">
+                <h3>Contactanos</h3>
+                <p>Email: <a href="mailto:contacto@lacasadelasplantas.com"></a></p>
+                <p>Whatsapp: +5491155555555</p>
+                <p>Ubicación: Av. Siempre Viva 123</p>
+            </div>
+            <div class="footerContactBox">
+                <img class="socialLinkImage" src="../img/instagram.png" alt="instagram logo">
+                <img class="socialLinkImage" src="../img/whatsapp.png" alt="whatsapp logo">
+                <input type="email" name="contact-email" class="form-control footerEmailInput"
+                    placeholder="Ingresa tu mail para mas info">
+                <button class="btn btn--azul" type="submit">Enviar</button>
+            </div>
+        </section>
+        <p>Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>
