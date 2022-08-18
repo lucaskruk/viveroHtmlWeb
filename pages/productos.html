@@ -8,141 +8,101 @@
     <meta name="keywords" content="Planta, Maceta, Planta de interior, Servicios de Jardineria, Planta de exterior">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/style.css">
-    <title>La Casa de Las Plantas - Nuestros Productos</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script defer src="../js/vars.js"></script>
+    <script defer src="../js/functions.js"></script>
+    <script defer src="../js/app.js"></script>
+    <title>Vivero Iguazu - Productos</title>
 </head>
     <body>
-        <header class="header__title">
-            <a href="../index.html" class="logoLink">
-                <img class="logoImg" src="../img/potlogo.png" alt="Logo Maceta" width="120" height="120">
-                <div class="logoTitle">
-                    La Casa de las Plantas
-                </div>
-            </a>
-            <div class="navContainer">
-                <!-- Hamburger icon -->
-                <input class="sideMenu" type="checkbox" id="sideMenu"/>
-                <label class="hamb" for="sideMenu"><span class="hambLine"></span></label> 
-
-                <nav class="mainNav">
-                    <ul class="navMenu">
-                        <li>
-                            <a href="../index.html">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="./cuidados.html">Cuidados</a>
-                        </li>
-                        <li>
-                            <a href="./productos.html">Productos</a>
-                        </li>
-                        <li>
-                            <a href="./historia.html">Historia</a>
-                        </li>
-                        <li>
-                            <a href="./contacto.html">Contacto</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div> 
-        </header>
-        <main class="headerMargin">
-            <h1 class="pageTitle">Catalogo de Productos</h1>
-
-            <section class="listaProductos" >
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="card productosCard">
-                                <img src="../img/macetas.jpg" class="card-img-top" alt="foto de una maceta">
-                                <div class="card-body">
-                                <h5 class="card-title">Maceta pintada</h5>
-                                <p class="card-text">Maceta pintada artesanal de 15</p>
-                                <a href="#" class="btn btn--verde">Agregar al carrito</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card productosCard">
-                                <img src="../img/PALMA.jpg" class="card-img-top"  alt="foto de una palma">
-                                <div class="card-body">
-                                <h5 class="card-title">Palma</h5>
-                                <p class="card-text">Planta de interior, prefiere lugares calidos y humedos.</p>
-                                <a href="#" class="btn btn--verde">Agregar al carrito</a>
-                                </div>
-                            </div>
-                        </div>
+        <div class="productosGrid">
+            <header class="header__title">
+                <a href="../index.html" class="logoLink">
+                    <img class="logoImg" src="../img/potlogo.png" alt="Logo Maceta" width="120" height="120">
+                    <div class="logoTitle">
+                        Vivero Iguazu
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card productosCard">
-                                <img src="../img/CCINTA.jpg" class="card-img-top"  alt="foto de una cinta">
-                                <div class="card-body">
-                                <h5 class="card-title">Cinta</h5>
-                                <p class="card-text">Planta de interior, se adapta a lugares con poca luz, riego moderado.</p>
-                                <a href="#" class="btn btn--verde">Agregar al carrito</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card productosCard">
-                                <img src="../img/HELECHO.jpg" class="card-img-top"  alt="foto de un helecho">
-                                <div class="card-body">
-                                <h5 class="card-title">Helecho</h5>
-                                <p class="card-text">Planta de interior, se riega con muy poca frecuencia en invierno.</p>
-                                <a href="#" class="btn btn--verde">Agregar al carrito</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="card productosCard">
-                            <img src="../img/serviciosJardineria.jpg" class="card-img-top" alt="foto de una mano con una pala">
-                            <div class="card-body">
-                            <h5 class="card-title">Servicios de Jardineria</h5>
-                            <p class="card-text">Nos encargamos de que tu jardín o balcon luzca como lo soñabas!</p>
-                            <a href="#" class="btn btn--verde">Consultar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </a>
+                <div class="navContainer">
+                    <!-- Hamburger icon -->
+                    <input class="sideMenu" type="checkbox" id="sideMenu"/>
+                    <label class="hamb" for="sideMenu"><span class="hambLine"></span></label> 
 
-        </main>
-        <footer>
-            <section class="footerFlexItems">
-                <nav class="footerNav">
-                    <ul>
-                        <li>
-                            <a href="../index.html">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="./cuidados.html">Cuidados</a>
-                        </li>
-                        <li>
-                            <a href="./productos.html">Productos</a>
-                        </li>
-                        <li>
-                            <a href="./historia.html">Historia</a>
-                        </li>
-                        <li>
-                            <a href="./contacto.html">Contacto</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="footerContactDetails">
-                    <h3>Contactanos</h3>
-                    <p>Email: <a href="mailto:contacto@lacasadelasplantas.com"></a></p>
-                    <p>Whatsapp: +5491155555555</p>
-                    <p>Ubicación: Av. Siempre Viva 123</p>
+                    <nav class="mainNav">
+                        <ul class="navMenu">
+                            <li>
+                                <a href="../index.html">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="./cuidados.html">Cuidados</a>
+                            </li>
+                            <li>
+                                <a href="./productos.html">Productos</a>
+                            </li>
+                            <li>
+                                <a href="./contacto.html">Contacto</a>
+                            </li>
+                            <li>
+                                <a id="carritoNav" href="./micarrito.html"><img class="logoCarrito" src="../img/cart.png" alt="imagen de carrito de compras"></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div> 
+            </header>
+            <aside class="headerMargin">
+                <div class="busquedaProd" >
+                    <input type="text" id="barraBuscar" placeholder="Buscar por nombre..." name="buscar">
+                    <button class="btn" id="btnBuscar">Buscar</button>
                 </div>
-                <div class="footerContactBox">
-                    <img class="socialLinkImage" src="../img/instagram.png" alt="instagram logo">
-                    <img class="socialLinkImage" src="../img/whatsapp.png" alt="whatsapp logo">
-                    <input type="email" name="contact-email" class="form-control footerEmailInput" placeholder="Ingresa tu mail para mas info">
-                    <button class="btn btn--azul" type="submit">Enviar</button>
+                <ul id="categoriasProd" ></ul>
+            </aside>
+            <main id="productosMain">
+                <h1 class="pageTitle">Catalogo de Productos</h1>
+
+                <section class="cardsList" id="productosCards">
+                </section>
+                <div class="pageChangeButtons">
+                    <button class="btn btn--verde" id="btnProdPrevio">Anterior</button>
+                    <span class="pageNumber" id="prodCurrentPage">1</span>
+                    <button class="btn btn--verde" id="btnProdSiguiente">Siguiente</button>
                 </div>
-            </section>
-            <p>Todos los derechos reservados</p>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            </main>
+            <footer>
+                <section class="footerFlexItems">
+                    <nav class="footerNav">
+                        <ul>
+                            <li>
+                                <a href="../index.html">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="./cuidados.html">Cuidados</a>
+                            </li>
+                            <li>
+                                <a href="./productos.html">Productos</a>
+                            </li>
+                            <li>
+                                <a href="./contacto.html">Contacto</a>
+                            </li>
+                            <li>
+                                <a href="./micarrito.html">Carrito de Compras</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="footerContactDetails">
+                        <h3>Contactanos</h3>
+                        <p>Email: <a href="mailto:contacto@lacasadelasplantas.com"></a></p>
+                        <p>Whatsapp: +5491155555555</p>
+                        <p>Ubicación: Av. Siempre Viva 123</p>
+                    </div>
+                    <div class="footerContactBox">
+                        <img class="socialLinkImage" src="../img/instagram.png" alt="instagram logo">
+                        <img class="socialLinkImage" src="../img/whatsapp.png" alt="whatsapp logo">
+                        <input type="email" name="contact-email" class="form-control footerEmailInput" placeholder="Ingresa tu mail para mas info">
+                        <button class="btn btn--azul" type="submit">Enviar</button>
+                    </div>
+                </section>
+                <p>Todos los derechos reservados</p>
+            </footer>
+        </div>
     </body>
 </html>
