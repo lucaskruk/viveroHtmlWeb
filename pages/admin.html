@@ -12,7 +12,16 @@
     <title>Vivero Iguazu - Administracion</title>
 </head>
     <body>
+        <div class="modal" id="modal1">
+            <div class="modal-dialog">
+              <section class="modal-header">Advertencia
+                <button class="close-modal" aria-label="close modal" id="closeModal1">✕</button>
+              </section>
+              <section class="modal-content" id="modal1Content"></section>
+            </div>
+        </div>
         <header class="header__title">
+            <a id="carritoNav" href="./micarrito.html"><img class="logoCarrito" src="../img/cart.png" alt="imagen de carrito de compras"></a>
             <a href="../index.html" class="logoLink">
                 <img class="logoImg" src="../img/potlogo.png" alt="Logo Maceta" width="120" height="120">
                 <div class="logoTitle">
@@ -38,9 +47,6 @@
                         <li>
                             <a href="./contacto.html">Contacto</a>
                         </li>
-                        <li>
-                            <a id="carritoNav" href="./micarrito.html"><img class="logoCarrito" src="../img/cart.png" alt="imagen de carrito de compras"></a>
-                        </li>
                     </ul>
                 </nav>
             </div> 
@@ -57,8 +63,7 @@
                         <th data-sort="precio" class="ordenable">Precio</th>
                         <th data-sort="stock"class="ordenable">Stock</th>
                         <th data-sort="ruta" class="ordenable">Ruta Imagen</th>
-                        <th>Quitar</th>
-                        <th>Editar</th>
+                        <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody id="bodyTablaAdmin">
@@ -69,27 +74,26 @@
                 <button class="btn btn--verde" id="btnPrevio">Anterior</button>
                 <button class="btn btn--verde" id="btnSiguiente">Siguiente</button>
             </div>
-            <div>
-                <button id="btnNuevoProd" class="btn btn--azul">Nuevo Producto</button>
-            </div>
+            
             <div id="adminForm">
                 <label for="ID">ID Producto:</label>
                 <input type="text" name="ID" id="idInput" readonly>
                 <label for="Nombre">Nombre:</label>
-                <input type="text" name="Nombre" id="nombreInput">
+                <input type="text" name="Nombre" id="nombreInput" required>
                 <label for="Descripcion">Descripcion:</label>
-                <input type="text" name="Descripcion" id="descInput">
+                <input type="text" name="Descripcion" id="descInput" required>
                 <label for="Categoria">Categoria:</label>
-                <input type="text" name="Categoria" id="catInput">
+                <input type="text" name="Categoria" id="catInput" required>
                 <label for="Precio">Precio:</label>
-                <input type="number" name="Precio" id="preInput">
+                <input type="number" name="Precio" id="preInput" required>
                 <label for="Stock">Stock:</label>
-                <input type="number" name="Stock" id="stockInput">
+                <input type="number" name="Stock" id="stockInput" required>
                 <label for="Ruta">Ruta Imagen:</label>
-                <input type="text" name="Ruta" id="rutaInput">
-                <input class="btn-lg btn--verde button" id="btnAddProd" type="submit" value="Confirmar"/>
-                <input class="btn-lg btn--rojo button" type="reset" value="Cancelar"/>
+                <input type="text" name="Ruta" id="rutaInput" required>
+                <input class="btn--verde btn" id="btnAddProd" type="submit" value="Confirmar"/>
+                <button id="btnNuevoProd" class="btn btn--azul">Nuevo Producto</button>
             </div>
+            
         </main>
         <footer>
             <section class="footerFlexItems">

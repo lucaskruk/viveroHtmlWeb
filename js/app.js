@@ -23,29 +23,36 @@ function quitaCarrito(botonQuitar) {
   }
 }
 
-function agregaCarrito(codigoArticulo) {
-    let cant = prompt("Ingrese la cantidad de este articulo: ");
-    let productoenStock = stock.getArticulo(codigoArticulo);
-    if (
-      typeof productoenStock !== "undefined" &&
-      productoenStock.descuentaStock(cant)
-    ) {
-      let productoCarrito = new Producto(
-        productoenStock.id,
-        productoenStock.nombre,
-        productoenStock.precio,
-        cant,
-        productoenStock.descripcion,
-        productoenStock.categoria,
-        productoenStock.ruta
-      );
-      carrito.agregaArticulo(productoCarrito);
-      guardarCarrito();
-      renderCantCarritoNav();
-    } else {
-      alert("La cantidad cargada excede el stock, intente de nuevo por favor");
-    }
+function agregaCarrito(producto, botonAgregar) {
+    const cantInput = botonAgregar.parentNode.querySelector('input');
+    let cant = cantInput.value;
+    cantInput.value = "";
+    if (cant > 0) {
+      if (
+        typeof producto !== "undefined" &&
+        producto.descuentaStock(cant)
+      ) {
+        let productoCarrito = new Producto(
+          producto.id,
+          producto.nombre,
+          producto.precio,
+          cant,
+          producto.descripcion,
+          producto.categoria,
+          producto.ruta
+        );
+        carrito.agregaArticulo(productoCarrito);
+        guardarCarrito();
+        renderCantCarritoNav();
+        muestraMensaje("Articulo agregado al carrito.");
+      } else {
+        muestraMensaje('La cantidad seleccionada excede el stock disponible. Elija un numero inferior.')
+      }
+  } else {
+    muestraMensaje('La cantidad tiene que ser mayor que cero.')
+  }
 }
+
 
 
 function calculaCarrito() {  

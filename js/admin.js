@@ -60,7 +60,8 @@ function quitaAdmin(botonQuitar) {
     const inputRuta = document.querySelector("#rutaInput");
 
     const idProducto = parseInt(inputId.value) || -1;
-    if (idProducto > -1) {
+    const stock = parseInt(inputStock.value) || -1 ;
+    if (idProducto > -1 && stock > -1 && inputNombre.value != '') {
       let productoConfirmado = stock.getArticulo(idProducto);
       if (typeof productoConfirmado != 'undefined') {
         productoConfirmado.nombre = inputNombre.value;
@@ -76,7 +77,7 @@ function quitaAdmin(botonQuitar) {
       guardarStock();
       renderAdminPaginado();
     } else {
-      alert("El id de producto no puede estar vacio.")
+      muestraMensaje("Hay campos vacios, revise por favor.")
     }
     
 
@@ -120,21 +121,19 @@ function quitaAdmin(botonQuitar) {
         tdCategoria.innerText = element.categoria;
         tdRuta.innerText = element.ruta;
   
-        const tdquitaElem = document.createElement("td");
-        const btnquitaElem = document.createElement("button");
-    
-        btnquitaElem.className = "btn btn--azul";
-        btnquitaElem.innerText = "Quitar";
-        btnquitaElem.addEventListener('click', function() {quitaAdmin(this)});
-        tdquitaElem.append(btnquitaElem);
-        const tdEditaElem = document.createElement("td");
+        const tdOpciones = document.createElement("td");
         const btnEditaElem = document.createElement("button");
-    
+        const btnquitaElem = document.createElement("button");
+
         btnEditaElem.className = "btn btn--azul";
         btnEditaElem.innerText = "Editar";
         btnEditaElem.addEventListener('click', function() {editaAdmin(this)});
-        tdEditaElem.append(btnEditaElem);
-        tr.append(tdID, tdNombre, tdDesc, tdCategoria, tdPrecio, tdCant, tdRuta, tdquitaElem, tdEditaElem);
+        btnquitaElem.className = "btn btn--azul";
+        btnquitaElem.innerText = "Quitar";
+        btnquitaElem.addEventListener('click', function() {quitaAdmin(this)});
+        tdOpciones.append(btnEditaElem, btnquitaElem);
+        
+        tr.append(tdID, tdNombre, tdDesc, tdCategoria, tdPrecio, tdCant, tdRuta, tdOpciones);
   
         bodyTablaAdmin.append(tr);
   

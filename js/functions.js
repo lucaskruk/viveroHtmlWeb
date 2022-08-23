@@ -68,6 +68,8 @@ function renderProductos(articulos) {
       const cbH4 = document.createElement("h4");
       const cbH5 = document.createElement("h5");
       const cbP = document.createElement("p");
+      const cbFlex = document.createElement("div");
+      const cbInput = document.createElement("input");
       const cbButton = document.createElement("button");
       card.className = 'card productosCard';
       image.className = 'card-img-top';
@@ -78,13 +80,19 @@ function renderProductos(articulos) {
       cbH4.innerText = element.nombre;
       cbH5.innerText = element.categoria;
       cbP.className = 'card-text';
-      cbP.innerText = element.descripcion
+      cbP.innerText = element.descripcion;
+      cbFlex.className='cardBtnDiv';
+      const cbLabel = document.createElement('label');
+      cbLabel.className = 'cardInputLabel';
+      cbLabel.innerText = 'Cantidad: ';
+      cbInput.type = 'number';
+      cbInput.className = 'cardInput';
       cbButton.className = 'btn btn--verde';
-      cbButton.innerText = 'Agregar al carrito'
-
+      cbButton.innerText = 'Agregar al carrito';
+      cbFlex.append(cbLabel, cbInput, cbButton);
   
-      cbButton.addEventListener('click', function() {agregaCarrito(element.id)});
-      cardBody.append(cbH4, cbH5, cbP, cbButton);
+      cbButton.addEventListener('click', function() {agregaCarrito(element, this)});
+      cardBody.append(cbH4, cbH5, cbP, cbFlex);
       card.append(image, cardBody);
 
       divProductosCards.append(card);
@@ -185,4 +193,19 @@ function filtraNombre() {
   const textBusca = document.querySelector("#barraBuscar");
   prodFiltrados = stock.filtraArticulos(textBusca.value);
   renderProductos(prodFiltrados);
+}
+
+function muestraMensaje(mensaje) {
+  const modal1 = document.querySelector('#modal1');
+  modal1.querySelector('#modal1Content').innerText=mensaje;
+  modal1.classList.add('is-visible');
+  let button = document.querySelector('#closeModal1');
+  button.addEventListener ("click", e => {
+    document.querySelector(".modal.is-visible").classList.remove('is-visible');
+  });
+  document.addEventListener("click", e => {
+    if (e.target == document.querySelector(".modal.is-visible")) {
+      document.querySelector(".modal.is-visible").classList.remove('is-visible');
+    }
+  });
 }
