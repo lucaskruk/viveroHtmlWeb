@@ -15,8 +15,17 @@
     <title>Vivero Iguazu - Productos</title>
 </head>
     <body>
+        <div class="modal" id="modal1">
+            <div class="modal-dialog">
+              <section class="modal-header">Informacion
+                <button class="close-modal" aria-label="close modal" id="closeModal1">✕</button>
+              </section>
+              <section class="modal-content" id="modal1Content"></section>
+             </div>
+        </div>
         <div class="productosGrid">
             <header class="header__title">
+                <a id="carritoNav" href="./micarrito.html"><img class="logoCarrito" src="../img/cart.png" alt="imagen de carrito de compras"></a>
                 <a href="../index.html" class="logoLink">
                     <img class="logoImg" src="../img/potlogo.png" alt="Logo Maceta" width="120" height="120">
                     <div class="logoTitle">
@@ -42,9 +51,6 @@
                             <li>
                                 <a href="./contacto.html">Contacto</a>
                             </li>
-                            <li>
-                                <a id="carritoNav" href="./micarrito.html"><img class="logoCarrito" src="../img/cart.png" alt="imagen de carrito de compras"></a>
-                            </li>
                         </ul>
                     </nav>
                 </div> 
@@ -54,6 +60,7 @@
                     <input type="text" id="barraBuscar" placeholder="Buscar por nombre..." name="buscar">
                     <button class="btn" id="btnBuscar">Buscar</button>
                 </div>
+                <h3>Categorias: </h3>
                 <ul id="categoriasProd" ></ul>
             </aside>
             <main id="productosMain">
