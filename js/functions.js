@@ -209,3 +209,18 @@ function muestraMensaje(mensaje) {
     }
   });
 }
+
+/** Funciones form contacto */
+
+function iniciaMailContacto() {
+  document.querySelector('#contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('default_service', 'contact_form', this).then(function() {
+      muestraMensaje('El correo ha sido enviado. Muchas Gracias');
+    }, function(error) {
+      console.log('Error al enviar mail: ' + error);
+      muestraMensaje('Ups! tuvimos algun problema, intente mas tarde.');
+    });
+    
+  });
+}

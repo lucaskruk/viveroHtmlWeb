@@ -96,12 +96,14 @@ function preCargaProductos() {
         window.open('/pages/admin.html');
       }
     });
-    if (window.location.pathname === "/pages/micarrito.html") {
-      renderCarrito();
-      const btnEnviarPed = document.querySelector("#enviarPedidoBtn")
-      btnEnviarPed.addEventListener("click", enviarPedidoWP);
-    }
-    if (window.location.pathname === "/pages/admin.html") {
+
+    switch (window.location.pathname) {
+      case "/pages/micarrito.html":
+        renderCarrito();
+        const btnEnviarPed = document.querySelector("#enviarPedidoBtn")
+        btnEnviarPed.addEventListener("click", enviarPedidoWP);    
+      break;
+      case "/pages/admin.html":
         document.querySelector('#btnAddProd').addEventListener('click', confirmarCargaAdmin, false);
         document.querySelector('#btnSiguiente').addEventListener('click', nextAdminPage, false);
         document.querySelector('#btnPrevio').addEventListener('click', previousAdminPage, false);
@@ -110,13 +112,18 @@ function preCargaProductos() {
         });
         document.querySelector('#btnNuevoProd').addEventListener('click', nuevoProd, false);
         renderAdminPaginado();
-    }
-    if (window.location.pathname === "/pages/productos.html") {
-      document.querySelector('#btnProdSiguiente').addEventListener('click', nextProdPage, false);
-      document.querySelector('#btnProdPrevio').addEventListener('click', previousProdPage, false);
-      document.querySelector('#btnBuscar').addEventListener('click', filtraNombre, false);
-      renderCategoriasList();
-      renderProductos(prodFiltrados);
+      break;
+      case "/pages/productos.html":
+        document.querySelector('#btnProdSiguiente').addEventListener('click', nextProdPage, false);
+        document.querySelector('#btnProdPrevio').addEventListener('click', previousProdPage, false);
+        document.querySelector('#btnBuscar').addEventListener('click', filtraNombre, false);
+        renderCategoriasList();
+        renderProductos(prodFiltrados);
+      break;
+      case "/pages/contacto.html":
+        emailjs.init('tmqA6HFdyCwNGrbqG');
+        iniciaMailContacto();
+      break;
     }
   }
 
