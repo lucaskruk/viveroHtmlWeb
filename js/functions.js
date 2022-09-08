@@ -13,6 +13,23 @@ function nuevoIDProducto() {
   
 }
 
+/*Funciones de fetch */
+async function fetchProductos(){
+  let url = "./json/productList.json";
+  if (window.location.pathname.includes("pages/")) {
+    url = "../json/productList.json";
+  }
+  let fetchContent;
+  await fetch(url).then((response) => response.json())
+  .then((json) => fetchContent = json);
+  for (elem of fetchContent) {
+    prod = new Producto(elem.id, elem.nombre, elem.precio, elem.cantidad, elem.descripcion, elem.categoria, elem.ruta);
+    stock.articulos.push(prod);
+  }
+  guardarStock();
+}
+
+
 
 /* Funciones Storage */
 function guardarStock() {
@@ -215,12 +232,38 @@ function muestraMensaje(mensaje) {
 function iniciaMailContacto() {
   document.querySelector('#contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    emailjs.sendForm('default_service', 'contact_form', this).then(function() {
-      muestraMensaje('El correo ha sido enviado. Muchas Gracias');
-    }, function(error) {
-      console.log('Error al enviar mail: ' + error);
-      muestraMensaje('Ups! tuvimos algun problema, intente mas tarde.');
-    });
-    
+    if (validaDatosContacto()) {
+      emailjs.sendForm('default_service', 'contact_form', this).then(function() {
+        muestraMensaje('El correo ha sido enviado. Muchas Gracias');
+      }, function(error) {
+        console.log('Error al enviar mail: ' + error);
+        muestraMensaje('Ups! tuvimos algun problema, intente mas tarde.');
+      });
+    }
   });
+}
+
+function validaDatosContacto() {
+  const contactForm = document.querySelector('#contactForm');
+  const inputName = contactForm.querySelector('#formName');
+  const inputSubject = contactForm.querySelector('#formSubject');
+  const inputEmail = contactForm.querySelector('#formEmail');
+  const inputMessage = contactForm.querySelector('#formMessage');
+
+
+  if (inputName.value === "" || inputSubject.value ==="" || inputEmail.value === "" || inputMessage.value === "") {
+    muestraMensaje('Debe completar todos los campos primero. Gracias')
+    return false;
+  }
+  else {
+    let  validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (inputEmail.value.match(validRegex)) {
+      return true;
+    } else {
+      muestraMensaje("Direccion de correo electronica incorrecta.");
+      return false;
+    }
+    
+  }
+
 }

@@ -1,0 +1,43 @@
+[{
+    "id": 1, 
+    "nombre": "Maceta de Ceramica", 
+    "precio":22.5, 
+    "cantidad": 50, 
+    "descripcion":"Maceta de ceramica 15cm marron", 
+    "categoria": "Macetas", 
+    "ruta": "../img/macetas.jpg" }
+,{
+    "id": 2, 
+    "nombre": "Palma", 
+    "precio": 30, 
+    "cantidad": 30, 
+    "descripcion":"Planta de interior, prefiere lugares calidos y humedos.", 
+    "categoria": "Plantas de interior", 
+    "ruta": "../img/PALMA.jpg" }
+,{
+    "id": 3, 
+    "nombre": "Cinta", 
+    "precio": 15, 
+    "cantidad": 50, 
+    "descripcion": "Se adapta a lugares con poca luz, riego moderado.", 
+    "categoria": "Plantas de interior", 
+    "ruta": "../img/CCINTA.jpg"}
+,{
+    "id": 4, 
+    "nombre": "Helecho", 
+    "precio": 80,
+    "cantidad": 20,
+    "descripcion": "Se riega con muy poca frecuencia en invierno.", 
+    "categoria": "Plantas de interior",
+    "ruta": "../img/HELECHO.jpg"
+}
+,{
+    "id": 5,
+    "nombre": "Servicios de Jardineria",
+    "precio": 100,
+    "cantidad": 20,
+    "descripcion": "Nos encargamos de que tu jardín o balcon luzca como lo soñabas!",
+    "categoria": "Servicios",
+    "ruta": "../img/serviciosJardineria.jpg"
+}
+]
