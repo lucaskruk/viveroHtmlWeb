@@ -8,7 +8,8 @@ function quitaAdmin(botonQuitar) {
       if (columns.length > 0) {
         let idProducto = parseInt(columns[0].innerText) || -1;
         if (idProducto > -1) {
-          stock.quitaArticulo(parseInt(idProducto));
+          stock.quitaArticulo(idProducto);
+          guardarStock();
         }
       }
       botonQuitar.removeEventListener('click', function() {quitaAdmin(this)}); 
@@ -60,22 +61,23 @@ function quitaAdmin(botonQuitar) {
     const inputRuta = document.querySelector("#rutaInput");
 
     const idProducto = parseInt(inputId.value) || -1;
-    const stock = parseInt(inputStock.value) || -1 ;
-    if (idProducto > -1 && stock > -1 && inputNombre.value != '') {
+    const cantiStock = parseInt(inputStock.value) || -1 ;
+    if (idProducto > -1 && cantiStock > -1 && inputNombre.value != '') {
       let productoConfirmado = stock.getArticulo(idProducto);
       if (typeof productoConfirmado != 'undefined') {
         productoConfirmado.nombre = inputNombre.value;
         productoConfirmado.descripcion = inputDesc.value;
         productoConfirmado.categoria = inputCat.value;
         productoConfirmado.precio = inputPrec.value;
-        productoConfirmado.cantidad = inputStock.value;
+        productoConfirmado.cantidad = cantiStock;
         productoConfirmado.ruta = inputRuta.value;
       } else {
-        productoConfirmado = new Producto(inputId.value, inputNombre.value, inputPrec.value, inputStock.value, inputDesc.value, inputCat.value, inputRuta.value);
+        productoConfirmado = new Producto(idProducto, inputNombre.value, inputPrec.value, cantiStock, inputDesc.value, inputCat.value, inputRuta.value);
         stock.articulos.push(productoConfirmado);
       }
       guardarStock();
       renderAdminPaginado();
+      muestraMensaje("Se realizo la carga de datos con exito.")
     } else {
       muestraMensaje("Hay campos vacios, revise por favor.")
     }

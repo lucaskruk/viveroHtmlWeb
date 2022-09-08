@@ -492,17 +492,19 @@ footer {
   width: 80%;
   margin: auto;
   overflow-x: scroll;
+  border-style: dashed;
+  border-color: lightblue;
 }
 
 .table td,
 .table th {
   border: 1px solid #ddd;
   padding: 8px;
+  text-align: center;
 }
 
 .table td {
   font-size: 10pt;
-  text-align: center;
 }
 
 .table tr:nth-child(even) {
@@ -558,11 +560,29 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 1rem;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.carritoBtn {
+  text-align: center;
+}
+
+#enviarPedidoBtn {
+  border-style: dashed;
+  border-color: lightblue;
+  border-radius: 30%;
+  padding: 1.5rem;
 }
 
 /* PRODUCTOS */

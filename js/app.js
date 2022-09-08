@@ -74,16 +74,7 @@ function enviarPedidoWP() {
 function preCargaProductos() {
     recuperoStock();
     if (stock.articulos.length === 0) {
-      producto1 = new Producto(nuevoIDProducto(), "Maceta de Ceramica", 22.5, 50, "Maceta de ceramica 15cm marron", "Macetas", "../img/macetas.jpg");
-      producto2 = new Producto(nuevoIDProducto(), "Palma", 30, 30, "Planta de interior, prefiere lugares calidos y humedos.", "Plantas de interior", "../img/PALMA.jpg");
-      producto3 = new Producto(nuevoIDProducto(), "Cinta", 15, 50, "Se adapta a lugares con poca luz, riego moderado.", "Plantas de interior", "../img/CCINTA.jpg");
-      producto4 = new Producto(nuevoIDProducto(), "Helecho", 80, 20, "Se riega con muy poca frecuencia en invierno.", "Plantas de interior", "../img/HELECHO.jpg");
-      producto5 = new Producto(nuevoIDProducto(), "Servicios de Jardineria", 100, 20, "Nos encargamos de que tu jardín o balcon luzca como lo soñabas!", "Servicios", "../img/serviciosJardineria.jpg");
-      stock.agregaArticulo(producto1);
-      stock.agregaArticulo(producto2);
-      stock.agregaArticulo(producto3);
-      stock.agregaArticulo(producto4);
-      stock.agregaArticulo(producto5);
+      fetchProductos();
     }
     prodFiltrados = stock.articulos;
   }
