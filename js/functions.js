@@ -27,6 +27,16 @@ async function fetchProductos(){
     stock.articulos.push(prod);
   }
   guardarStock();
+  switch (window.location.pathname) {
+    case "/pages/productos.html":
+      renderCategoriasList();
+      renderProductos(stock.articulos);
+    break;
+    case "/pages/admin.html":
+      renderAdminPaginado();  
+    break;
+  }
+
 }
 
 
